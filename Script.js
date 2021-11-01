@@ -26,8 +26,8 @@ async function myFunction(){
         throw Error(res.statusText)
     }
      let data = await res.text();
-        document.getElementById("demo").innerText = data;
-
+     document.getElementById("demo").innerText = data;
+     
    }catch(error) {
         console.log(error)
    }
