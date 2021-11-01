@@ -1,10 +1,34 @@
-let num = Math.ceil(Math.random() * 10);
-console.log(num)
-let gnum = prompt('Guess the number berween 1 and 10 inclus', '');
-if(num == gnum){
-    console.log("Hii You are Great")
-}else{
-    console.log("Try to Again")
-}3
+let myfun = document.getElementById("myBtn").addEventListener("click", myFunction);
 
-41
+// function myFunction(){
+// let promiseObj = fetch("data.txt")   
+// console.log(promiseObj) 
+// promiseObj.then((resolve)=>{
+//   if(!resolve.ok){
+//       throw Error(resolve.statusText)
+//   }  
+//  return resolve.text();
+
+// }).then((result)=>{
+//     document.getElementById("demo").innerText = result;
+// }).catch((erro)=>{
+//     console.log(erro)
+// })
+// }
+ 
+// async and await .
+
+async function myFunction(){
+   try{
+    console.log("Button Clicked");
+    let res = await fetch("data.txt");
+    if(!res.ok){
+        throw Error(res.statusText)
+    }
+     let data = await res.text();
+        document.getElementById("demo").innerText = data;
+
+   }catch(error) {
+        console.log(error)
+   }
+}
